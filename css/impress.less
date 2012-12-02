@@ -1,0 +1,106 @@
+@import url('variables.less');
+@import url('mixins.less');
+
+// define some fonts
+@font-cronos: "cronos-pro", Helvetica, Arial, sans-serif;
+@font-heading: "cronos-pro-subhead", Helvetica, Arial, sans-serif;
+
+.transition(@type: all, @time: 1s) {
+	-webkit-transition: @type @time;
+	-moz-transition: @type @time;
+	-o-transition: @type @time;
+	transition: @type @time;
+}
+
+body {
+	font-family: @font-cronos;
+	background-image: url('../img/light_wool.png'),-webkit-gradient(radial, 50%, 0, 50%, 100, color-stop(0%, #000), color-stop(44%, #262626), color-stop(100%, #1a1a1a));
+	background-image: url('../img/light_wool.png'),-webkit-radial-gradient(center, #000 0%,#262626 44%,#1a1a1a 100%);
+	background-image: url('../img/light_wool.png'),-moz-radial-gradient(center, #000 0%,#262626 44%,#1a1a1a 100%);
+	background-image: url('../img/light_wool.png'),-o-radial-gradient(center, #000 0%,#262626 44%,#1a1a1a 100%);
+	background-image: url('../img/light_wool.png'),radial-gradient(center, #000 0%,#262626 44%,#1a1a1a 100%);
+}
+
+.slide {
+	height: auto;
+
+	background: rgba(0,0,0,.5);
+
+	.border-radius(15px);
+	.box-shadow(2px 2px 5px rgba(0,0,0,.6));
+
+	.transition;
+
+	&.no-bg {
+		background: none;
+		.border-radius(0);
+		.box-shadow(0 0 0);
+	}
+
+	h1 {
+		font-size: 48px;
+		color: rgba(255,97,39,.9);
+		line-height: 1.5em;
+		font-weight: 700;
+		margin: 10px 0px 0px;
+	}
+
+	h2 {
+		color: rgba(255,255,255,.9);
+
+		font-size: 36px;
+		line-height: 1.5em;
+		font-weight: 400;
+		font-family: @font-cronos;
+
+		margin: 10px 0px 0px;
+	}
+
+	p {
+		font-family: @font-cronos;
+		font-size: 28px;
+		font-weight: 300;
+
+		color: rgba(255,255,255,.8);
+	}
+
+	footer {
+		font-size: 20px;
+		font-weight: 300;
+		color: rgba(255,255,255,.5);
+		margin-top: 200px;
+	}
+
+	&.iframe-zoom {
+		padding: 20px;
+		border: 1px solid rgba(0,0,0,.25);
+		background: rgba(0,0,0,.5);
+		width: 1064px;
+	}
+
+
+}
+
+.slide&.past {
+	.opacity(0) !important;
+}
+
+.image {
+	width: 1024px;
+
+	h2 {
+		color: rgba(255,97,39,.9);
+		margin: 0px 0px 5px;
+	}
+
+	img {
+		max-width: 95%;
+		height: auto;
+	}
+
+	p {
+		font-size: 18px;
+	}
+
+	.opacity(100) !important;
+}
